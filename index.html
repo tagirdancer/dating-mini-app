@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Серьезные Знакомства</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="welcome-screen" class="screen active">
+            <h1>🏛️ Серьезные Знакомства</h1>
+            <p>Создайте анкету для поиска партнера по жизни</p>
+            <button onclick="showScreen('form-screen')">Создать анкету</button>
+        </div>
+
+        <div id="form-screen" class="screen">
+            <h2>👤 Ваша анкета</h2>
+            <form id="profile-form">
+                <input type="text" id="name" placeholder="Ваше имя" required>
+                <input type="number" id="age" placeholder="Возраст" min="18" max="100" required>
+                
+                <select id="gender" required>
+                    <option value="">Ваш пол</option>
+                    <option value="male">Мужской</option>
+                    <option value="female">Женский</option>
+                </select>
+
+                <select id="goal" required>
+                    <option value="">Цель знакомства</option>
+                    <option value="family">Создание семьи</option>
+                    <option value="relationship">Серьезные отношения</option>
+                    <option value="friendship">Общение</option>
+                </select>
+
+                <select id="children">
+                    <option value="">Отношение к детям</option>
+                    <option value="want">Хочу детей</option>
+                    <option value="have">Есть дети</option>
+                    <option value="not_want">Не хочу детей</option>
+                </select>
+
+                <textarea id="values" placeholder="Ваши жизненные ценности..."></textarea>
+                <textarea id="interests" placeholder="Ваши интересы и хобби..."></textarea>
+
+                <div class="privacy">
+                    <label>
+                        <input type="checkbox" id="show-name"> Скрыть имя сначала
+                    </label>
+                </div>
+
+                <button type="submit">Сохранить анкету</button>
+            </form>
+        </div>
+
+        <div id="success-screen" class="screen">
+            <h2>✅ Анкета сохранена!</h2>
+            <p>Теперь вы можете найти свою вторую половинку</p>
+            <button onclick="closeApp()">Закрыть</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
